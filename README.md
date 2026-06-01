@@ -5,7 +5,7 @@ Built an end-to-end analysis project focused on Industrial Engineers using publi
 
 Tech Stack: Python, Pandas, scikit-learn, Matplotlib, Requests (CareerOneStop API), BLS OES 2023
 
-## Project Walkthrough: https://www.youtube.com/watch?v=E3se3lQlEdA
+Project Walkthrough: https://www.youtube.com/watch?v=E3se3lQlEdA
 
 ## Key components include:
 - Data ingestion and cleaning of large BLS Excel tables
@@ -54,6 +54,12 @@ Categorical features were converted to dummy variables. Model fit was evaluated 
 Created a binary label indicating whether a record is in the top 10% of pay within its industry group, then used logistic regression to test whether:
 - NAICS sector/industry and employment size are associated with being in that top-pay bucket.
 
+### Key Findings
+- Highest paying industry for IEs: Web Search Portals (~$200K/yr); lowest: Radio & TV Broadcasting (~$60K/yr)
+- Alaska had the highest average IE salary (~$140K); North Dakota had the lowest (~$80K)
+- Architectural & Engineering Services employed the most IEs (~23,000), while Footwear Manufacturing employed the fewest (~30)
+- Linear regression revealed that industry sector and ownership type have moderate influence on salary, though most variance comes from factors outside the model (company, location, experience)
+- Logistic regression classified top-10% pay roles with moderate accuracy, highlighting manufacturing and technical sectors as most likely to offer top-tier IE salaries
 
 ## View notebook on Colab
 https://colab.research.google.com/drive/1ooptts5-vuDlvjL_keIQg2XaSk1DB2gZ
