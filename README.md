@@ -3,6 +3,10 @@
 ## Project Overview
 Built an end-to-end analysis project focused on Industrial Engineers using public labor market datasets. The project cleans and combines BLS OES 2023 wage/employment data with location-based wage benchmarks pulled from the CareerOneStop Compare Salaries API, then uses visualizations and baseline regression models to explore relationships between pay, industry, ownership, employment size, and geography.
 
+Tech Stack: Python, Pandas, scikit-learn, Matplotlib, Requests (CareerOneStop API), BLS OES 2023
+
+## Project Walkthrough: https://www.youtube.com/watch?v=E3se3lQlEdA
+
 ## Key components include:
 - Data ingestion and cleaning of large BLS Excel tables
 - API-based wage collection by ZIP/location and JSON output generation
@@ -51,7 +55,7 @@ Created a binary label indicating whether a record is in the top 10% of pay with
 - NAICS sector/industry and employment size are associated with being in that top-pay bucket.
 
 
-## In case the file shows an error
+## View notebook on Colab
 https://colab.research.google.com/drive/1ooptts5-vuDlvjL_keIQg2XaSk1DB2gZ
 
 
