@@ -51,6 +51,7 @@ Created a binary label indicating whether a record is in the top 10% of pay with
 - NAICS sector/industry and employment size are associated with being in that top-pay bucket.
 
 
-
+## In case the file shows an error
+https://colab.research.google.com/drive/1ooptts5-vuDlvjL_keIQg2XaSk1DB2gZ
 
 
