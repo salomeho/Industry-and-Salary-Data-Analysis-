@@ -61,6 +61,15 @@ Created a binary label indicating whether a record is in the top 10% of pay with
 - Linear regression revealed that industry sector and ownership type have moderate influence on salary, though most variance comes from factors outside the model (company, location, experience)
 - Logistic regression classified top-10% pay roles with moderate accuracy, highlighting manufacturing and technical sectors as most likely to offer top-tier IE salaries
 
+## Interactive Dashboard
+Built a Tableau dashboard to visualize the key findings interactively across 3 views:
+- **Salary by Industry** — ranked bar chart of avg IE salary across 143 NAICS industries
+- **Salary by State** — choropleth map of median IE salary across all 50 states
+- **Employment vs Salary** — scatter plot showing which industries hire the most IEs and at what pay
+
+## View notebook on Tableau Public
+https://public.tableau.com/views/IESalaryAnalysis/IndustrialEngineerSalaryAnalysis2023?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
+
 ## View notebook on Colab
 https://colab.research.google.com/drive/1ooptts5-vuDlvjL_keIQg2XaSk1DB2gZ
 
