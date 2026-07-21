@@ -46,6 +46,7 @@ https://public.tableau.com/views/IESalaryAnalysis/IndustrialEngineerSalaryAnalys
 
 View notebook on Google Colab:
 https://colab.research.google.com/drive/1ooptts5-vuDlvjL_keIQg2XaSk1DB2gZ
+
 Watch the Project Walkthrough:
 https://www.youtube.com/watch?v=E3se3lQlEdA
 
