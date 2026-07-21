@@ -1,76 +1,64 @@
 # Industry & Salary Data Analysis
 
+## Business Question
+For an Industrial Engineer, does industry or geographic location have more influence on maximizing salary, and which sectors offer the best odds of top-tier pay?
+
 ## Project Overview
-Built an end-to-end analysis project focused on Industrial Engineers using public labor market datasets. The project cleans and combines BLS OES 2023 wage/employment data with location-based wage benchmarks pulled from the CareerOneStop Compare Salaries API, then uses visualizations and baseline regression models to explore relationships between pay, industry, ownership, employment size, and geography.
-
-Tech Stack: Python, Pandas, scikit-learn, Matplotlib, Requests (CareerOneStop API), BLS OES 2023
-
-Project Walkthrough: https://www.youtube.com/watch?v=E3se3lQlEdA
-
-## Key components include:
-- Data ingestion and cleaning of large BLS Excel tables
-- API-based wage collection by ZIP/location and JSON output generation
-- Exploratory analysis + visualizations (industry and state comparisons)
-- Baseline modeling with linear regression and logistic regression
+This project analyzes wage and employment patterns for Industrial Engineers across U.S. industries and states. It combines public labor-market data from the Bureau of Labor Statistics with location-based salary data collected through the CareerOneStop API. The project includes data collection, cleaning, exploratory analysis, interactive visualizations, and baseline regression models.
 
 ## Data Sources
-- BLS Occupational Employment and Wage Statistics (OES), 2023
-- CareerOneStop API
+- BLS Occupational Employment and Wage Statistics, 2023
+  - Industry-level employment and wage estimates
+  - Ownership-level occupational data
+  - Filtered to Industrial Engineers, SOC 17-2112
+- BLS Industrial Engineers occupational webpage
+  - Tables extracted using Requests and BeautifulSoup
+- CareerOneStop Compare Salaries API
+  - Annual wage percentiles for selected locations
+  - API responses processed and stored as JSON
 
-## Data Cleaning & Feature Engineering
-- Standardized column formats and numeric types (wages, employment counts)
-- Handled missing values and removed rows that could not be analyzed reliably
-- Filtered the dataset to *Industrial Engineers (SOC 17-2112) only
-- Created/organized features for analysis such as:
-  - NAICS sector/industry identifiers
-  - Ownership type
-  - Employment size (e.g., TOT_EMP)
-  - Wage metrics
-  - Geography fields for state-level comparisons
- 
-## Exploratory Data Analysis 
-Explored wage and employment patterns across industries and states, including:
-- Which NAICS industries employ the most / least Industrial Engineers
-- Which NAICS industries have the highest / lowest average wages
-- Which states pay Industrial Engineers the most / least (based on the available wage statistic)
+## Tools Used
+Python, Pandas, Requests, BeautifulSoup, Plotly, scikit-learn, Matplotlib, Tableau
 
-Visualizations include:
-- Wage distributions by NAICS sector (boxplots)
-- Top industries by employment (bar/pie style summary)
-- State-level wage comparisons (map/choropleth-style visualization)
+## Key Findings
+- Web Search Portals had the highest reported average Industrial Engineer salary at approximately $200,000 per year.
+- Radio and Television Broadcasting had the lowest reported average salary at approximately $60,000 per year.
+- Architectural and Engineering Services employed approximately 23,000 Industrial Engineers, the largest employment total in the dataset.
+- Footwear Manufacturing employed approximately 30 Industrial Engineers, the smallest reported total.
+- Alaska had the highest state median salary at approximately $140,000.
+- North Dakota had the lowest state median salary at approximately $80,000.
 
-## Model Building
-To quantify relationships between pay and industry/employment factors, I built two baseline models:
-
-### 1) Linear Regression (Salary)
-Modeled Industrial Engineer salary as a function of:
-- NAICS sector/industry
-- Ownership type
-- Employment size
-
-Categorical features were converted to dummy variables. Model fit was evaluated using standard regression metrics.
-
-### 2) Logistic Regression (Top 10% Pay Classification)
-Created a binary label indicating whether a record is in the top 10% of pay within its industry group, then used logistic regression to test whether:
-- NAICS sector/industry and employment size are associated with being in that top-pay bucket.
-
-### Key Findings
-- Highest paying industry for IEs: Web Search Portals (~$200K/yr); lowest: Radio & TV Broadcasting (~$60K/yr)
-- Alaska had the highest average IE salary (~$140K); North Dakota had the lowest (~$80K)
-- Architectural & Engineering Services employed the most IEs (~23,000), while Footwear Manufacturing employed the fewest (~30)
-- Linear regression revealed that industry sector and ownership type have moderate influence on salary, though most variance comes from factors outside the model (company, location, experience)
-- Logistic regression classified top-10% pay roles with moderate accuracy, highlighting manufacturing and technical sectors as most likely to offer top-tier IE salaries
+## Visualizations 
+- Industrial Engineer wage distribution across NAICS industries
+- Top 10 industries by Industrial Engineer employment
+- State-level choropleth of median annual wages
+- Actual versus predicted salaries from linear regression
+- Logistic-regression confusion matrix
 
 ## Interactive Dashboard
-Built a Tableau dashboard to visualize the key findings interactively across 3 views:
-- **Salary by Industry** — ranked bar chart of avg IE salary across 143 NAICS industries
-- **Salary by State** — choropleth map of median IE salary across all 50 states
-- **Employment vs Salary** — scatter plot showing which industries hire the most IEs and at what pay
+The Tableau dashboard contains three views:
+- Salary by Industry — ranked bar chart of avg IE salary across 143 NAICS industries
+- Salary by State — choropleth map of median IE salary across all 50 states
+- Employment vs Salary — scatter plot showing which industries hire the most IEs and at what pay
 
-## View notebook on Tableau Public
+View notebook on Tableau Public:
 https://public.tableau.com/views/IESalaryAnalysis/IndustrialEngineerSalaryAnalysis2023?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
 
-## View notebook on Colab
+View notebook on Google Colab:
 https://colab.research.google.com/drive/1ooptts5-vuDlvjL_keIQg2XaSk1DB2gZ
+Watch the Project Walkthrough:
+https://www.youtube.com/watch?v=E3se3lQlEdA
 
+## Methodology
+Three public data sources were used: downloaded BLS OES 2023 employment and wage tables, a BLS Industrial Engineers occupation profile page, and CareerOneStop API results collected by ZIP code for geographic wage comparisons.
 
+The BLS industry data was filtered to Industrial Engineers (SOC 17-2112). Wage and employment fields were converted to numeric formats, and records missing values required for each analysis were removed. CareerOneStop API results were processed, deduplicated, and filtered to annual state-level wage records.
+
+The analysis examined five areas: the highest- and lowest-paying industries, the industries employing the most and fewest Industrial Engineers, the states with the highest and lowest median wages, a baseline linear regression relating salary to industry, ownership type, and employment size, and a logistic regression exploring whether industry and employment size could distinguish relatively high-paying observations.
+
+Five supporting visualizations were produced: three exploratory (an industry wage-distribution boxplot, a top-employment industries chart, and a state choropleth of median wages) and two model-diagnostic plots (actual-vs-predicted salary from the linear regression, and a confusion matrix from the logistic regression).
+
+## Limitations
+The datasets contain aggregated labor-market estimates rather than individual employee records. Important salary factors such as experience, education, job level, employer, and cost of living are not included.
+
+The regression models are exploratory baselines. The linear regression does not capture most factors affecting salary, while the logistic regression should not be interpreted as a precise prediction tool. Additionally, the state analysis uses median wage estimates, so individual salaries may differ substantially.
