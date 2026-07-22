@@ -7,14 +7,9 @@ For an Industrial Engineer, does industry or geographic location have more influ
 This project analyzes wage and employment patterns for Industrial Engineers across U.S. industries and states. It combines public labor-market data from the Bureau of Labor Statistics with location-based salary data collected through the CareerOneStop API. The project includes data collection, cleaning, exploratory analysis, interactive visualizations, and baseline regression models.
 
 ## Project Links
-[Interactive Tableau Dashboard]
-https://public.tableau.com/views/IESalaryAnalysis/IndustrialEngineerSalaryAnalysis2023?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
-
-[Google Colab Notebook]
-https://colab.research.google.com/drive/1ooptts5-vuDlvjL_keIQg2XaSk1DB2gZ
-
-[Project Walkthrough]
-https://www.youtube.com/watch?v=E3se3lQlEdA
+- [Interactive Tableau Dashboard](https://public.tableau.com/views/IESalaryAnalysis/IndustrialEngineerSalaryAnalysis2023?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+- [Google Colab Notebook](https://colab.research.google.com/drive/1ooptts5-vuDlvjL_keIQg2XaSk1DB2gZ)
+- [Project Walkthrough](https://www.youtube.com/watch?v=E3se3lQlEdA)
 
 ## Data Sources
 - BLS Occupational Employment and Wage Statistics, 2023
